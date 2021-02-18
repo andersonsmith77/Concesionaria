@@ -1,0 +1,33 @@
+﻿@page
+@model ConcesionariaSystem.Web.Pages.AutosModel
+@{
+}
+
+<h1>Listado de Autos</h1>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Marca</td>
+            <td>Modelo</td>
+            <td>Año</td>
+            <td>Existencias</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Auto)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Marca</td>
+                <td>@item.Modelo</td>
+                <td>@item.Año</td>
+                <td>@item.Existencias</td>
+                <td>
+                    <a class="btn btn-sm btn-info" asp-area="" asp-page="/EditarAuto" asp-route-id="@item.Id">Editar</a>
+                </td>
+            </tr>
+        }
+    <tbody>
+</table>
